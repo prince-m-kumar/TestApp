@@ -15,7 +15,7 @@ class MainActivityViewModel (private val networkClient:APIInterface):ViewModel()
 
     private val _networkLiveData = MutableLiveData<LiveDataResult<NetworkDataResponse>>()
     val networkLiveData: LiveData<LiveDataResult<NetworkDataResponse>>
-        get() = networkLiveData
+        get() = _networkLiveData
 
 
     private val  _loadingLiveData = MutableLiveData<Boolean>()
