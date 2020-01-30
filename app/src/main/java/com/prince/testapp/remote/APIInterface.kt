@@ -7,6 +7,9 @@ import retrofit2.http.Path
 interface APIInterface{
 
 
+    /**
+     * @return it return NetworkResponse.java
+     */
     @GET("s/2iodh4vg0eortkl/facts.json")
     fun getData(): Maybe<NetworkDataResponse>
 }

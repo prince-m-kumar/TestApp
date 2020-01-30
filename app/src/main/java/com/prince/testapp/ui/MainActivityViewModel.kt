@@ -10,6 +10,9 @@ import io.reactivex.MaybeObserver
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
+/**
+ * View Model for Main Activity Responsible for fetch data from repo and provide response to observer
+ */
 class MainActivityViewModel (private val networkClient:APIInterface):ViewModel(){
 
 
@@ -23,6 +26,9 @@ class MainActivityViewModel (private val networkClient:APIInterface):ViewModel()
         get() = _loadingLiveData
 
 
+    /**
+     * Fetch data from network and set loding visibility true
+     */
     fun fetchDataFromNetwork() {
         this.setLoadingVisibility(true)
         this.networkClient.getData().subscribeOn(Schedulers.io()).subscribe(GetDataConsumer())
@@ -33,6 +39,9 @@ class MainActivityViewModel (private val networkClient:APIInterface):ViewModel()
         _loadingLiveData.postValue(visible)
     }
 
+    /**
+     * Consumer for network operation
+     */
 
     inner class GetDataConsumer : MaybeObserver<NetworkDataResponse> {
         override fun onSubscribe(d: Disposable) {

@@ -1,5 +1,9 @@
 package com.prince.testapp.utils
 
+
+/**
+ * Created Generics class for all repo operation
+ */
 class LiveDataResult<T>(val status: Status, val data: T? = null, val err: Throwable? = null) {
     companion object {
         fun <T> succes(data: T?) = LiveDataResult(Status.SUCCESS, data)
