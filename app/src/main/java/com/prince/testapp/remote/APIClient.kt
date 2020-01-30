@@ -13,7 +13,7 @@ const val BASE_URL = "https://dl.dropboxusercontent.com/"
 object APIClient {
 
     fun getClient(): APIInterface {
-
+        //Reference :- https://square.github.io/retrofit/
         val requestInterceptor = run {
             val httpLoggingInterceptor = HttpLoggingInterceptor()
             httpLoggingInterceptor.apply {
